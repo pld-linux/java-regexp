@@ -1,8 +1,8 @@
 Summary:	Java Regular Expression
 Summary(pl):	Wyra¿enia regularne do Javy
 Name:		jakarta-regexp
-Version:	1.2
-Release:	3
+Version:	1.3
+Release:	1
 License:	Apache
 Group:		Development/Languages/Java
 Source0:	http://www.apache.org/dist/jakarta/regexp/source/%{name}-%{version}.tar.gz
