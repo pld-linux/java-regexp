@@ -7,6 +7,7 @@ License:	Apache
 Group:		Development/Languages/Java
 Source0:	http://www.apache.org/dist/jakarta/regexp/source/%{name}-%{version}.tar.gz
 # Source0-md5:	4322f82bea908ca4a7db270f7fa4850d
+Patch0:		%{name}-build.patch
 URL:		http://jakarta.apache.org/regexp/index.html
 BuildRequires:	jakarta-ant
 Requires:	jre
@@ -43,6 +44,7 @@ Dokumentacja do javowych wyra¿eñ regularnych.
 %prep
 %setup -q
 find . -name "*.jar" -exec rm -f {} \;
+mkdir -p jakarta-site2/lib
 
 %build
 ant jar javadocs
