@@ -45,7 +45,7 @@ Dokumentacja do javowych wyra¿eñ regularnych.
 find . -name "*.jar" -exec rm -f {} \;
 
 %build
-ant -buildfile build/build-regexp.xml jar javadocs
+ant jar javadocs
 
 %install
 rm -rf $RPM_BUILD_ROOT
