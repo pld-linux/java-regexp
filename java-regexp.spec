@@ -6,7 +6,7 @@ Release:	1
 License:	Apache
 Group:		Development/Languages/Java
 Source0:	http://www.apache.org/dist/jakarta/regexp/source/%{name}-%{version}.tar.gz
-# Source0-md5:	73aa60b63da140b4a461b46c33082eec
+# Source0-md5:	4322f82bea908ca4a7db270f7fa4850d
 URL:		http://jakarta.apache.org/regexp/index.html
 BuildRequires:	jakarta-ant
 Requires:	jre
