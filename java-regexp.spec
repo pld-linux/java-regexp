@@ -2,8 +2,8 @@ Summary:	Java Regular Expression
 Summary(pl):	Wyra¿enia regularne do Javy
 Name:		jakarta-regexp
 Version:	1.2
-Release:	1
-License:	Apache Software License
+Release:	2
+License:	Apache
 Group:		Development/Languages/Java
 Source0:	http://jakarta.apache.org/builds/%{name}/release/%{version}/%{name}-%{version}.tar.gz
 URL:		http://jakarta.apache.org/regexp/index.html
@@ -38,14 +38,12 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_javalibdir}
 install %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javalibdir}/regexp.jar
 
-gzip -9nf LICENSE
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc LICENSE
 %{_javalibdir}/*.jar
 
 %files doc
