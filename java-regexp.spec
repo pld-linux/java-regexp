@@ -16,10 +16,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_javalibdir	/usr/share/java
 
 %description
-Java Regular Expression.
+Regexp is a 100% Pure Java Regular Expression package that was
+graciously donated to the Apache Software Foundation by Jonathan
+Locke. This package is intended to be an answer to a question we
+commonly hear in the Java world: "Why isn't there a decent regular
+expression package available for Java under a BSD-Style (ie: Apache)
+license?"
 
 %description -l pl
-Wyra¿enia regularne do Javy.
+Regexp to pakiet obs³uguj±cy wyra¿enia regularne napisany ca³kowicie w
+czystej Javie. Zosta³ on ³askawie podarowany Apache Software
+Foundation przez Jonathana Locke. Ten pakiet ma byæ odpowiedzi± na
+pytanie czêsto s³yszane w ¶wiecie Javy: "dlaczego nie ma przyzwoitego
+pakietu obs³uguj±cego wyra¿enia regularne w Javie na licencji typu
+BSD?".
 
 %package doc
 Summary:	Java Regular Expression documentation
