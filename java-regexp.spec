@@ -7,7 +7,7 @@ License:	Apache Software License
 Group:		Development/Languages/Java
 Group(de):	Entwicklung/Sprachen/Java
 Group(pl):	Programowanie/Jêzyki/Java
-Source0:	http://www.apache.org/dist/jakarta/%{name}/release/%{version}/%{name}-%{version}.tar.gz
+Source0:	http://jakarta.apache.org/builds/%{name}/release/%{version}/%{name}-%{version}.tar.gz
 URL:		http://jakarta.apache.org/regexp/index.html
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
