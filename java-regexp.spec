@@ -54,7 +54,7 @@ ant jar javadocs
 rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_javadir}
-install bin/%{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}
+install build/%{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}
 ln -sf %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/regexp.jar
 
 %clean
