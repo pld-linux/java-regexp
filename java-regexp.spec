@@ -7,6 +7,7 @@ License:	Apache
 Group:		Development/Languages/Java
 Source0:	http://jakarta.apache.org/builds/%{name}/release/%{version}/%{name}-%{version}.tar.gz
 URL:		http://jakarta.apache.org/regexp/index.html
+Requires:	jre
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
