@@ -1,4 +1,4 @@
-Summary: 	Java Regular Expression
+Summary:	Java Regular Expression
 Summary(pl):	Wyra¿enia regularne do Javy
 Name:		jakarta-regexp
 Version:	1.2
