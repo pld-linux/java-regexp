@@ -6,6 +6,7 @@ Release:	2
 License:	Apache
 Group:		Development/Languages/Java
 Source0:	http://jakarta.apache.org/builds/%{name}/release/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	73aa60b63da140b4a461b46c33082eec
 URL:		http://jakarta.apache.org/regexp/index.html
 Requires:	jre
 BuildArch:	noarch
