@@ -13,8 +13,6 @@ Requires:	jre
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_javalibdir	/usr/share/java
-
 %description
 Regexp is a 100% Pure Java Regular Expression package that was
 graciously donated to the Apache Software Foundation by Jonathan
@@ -52,9 +50,9 @@ ant -buildfile build/build-regexp.xml jar javadocs
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_javalibdir}
-install bin/%{name}-%{version}.jar $RPM_BUILD_ROOT%{_javalibdir}
-ln -sf %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javalibdir}/regexp.jar
+install -d $RPM_BUILD_ROOT%{_javadir}
+install bin/%{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}
+ln -sf %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/regexp.jar
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
-%{_javalibdir}/*.jar
+%{_javadir}/*.jar
 
 %files doc
 %defattr(644,root,root,755)
