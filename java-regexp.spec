@@ -1,4 +1,5 @@
 Summary: 	Java Regular Expression
+Summary(pl):	Wyra¿enia regularne do Javy
 Name:		jakarta-regexp
 Version:	1.2
 Release:	1
@@ -14,27 +15,32 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_javalibdir	/usr/share/java
 
 %description
-Java Regular Expression
+Java Regular Expression.
+
+%description -l pl
+Wyra¿enia regularne do Javy.
 
 %package doc
+Summary:	Java Regular Expression documentation
+Summary(pl):	Dokumentacja do javowych wyra¿eñ regularnych
 Group:		Development/Languages/Java
 Group(de):	Entwicklung/Sprachen/Java
 Group(pl):	Programowanie/Jêzyki/Java
-Summary:	Java Regular Expression documentation
 
 %description doc
-Java Regular Expression documentation
+Java Regular Expression documentation.
+
+%description doc -l pl
+Dokumentacja do javowych wyra¿eñ regularnych.
 
 %prep
 %setup -q
 
-%build
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT/%{_javalibdir}
-cp %{name}-%{version}.jar $RPM_BUILD_ROOT/%{_javalibdir}/regexp.jar
+install -d $RPM_BUILD_ROOT%{_javalibdir}
+install %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javalibdir}/regexp.jar
 
 gzip -9nf LICENSE
 
