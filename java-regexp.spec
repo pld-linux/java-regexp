@@ -43,6 +43,7 @@ Dokumentacja do javowych wyra¿eñ regularnych.
 
 %prep
 %setup -q
+%patch0 -p1
 find . -name "*.jar" -exec rm -f {} \;
 mkdir -p jakarta-site2/lib
 
