@@ -5,8 +5,6 @@ Version:	1.2
 Release:	1
 License:	Apache Software License
 Group:		Development/Languages/Java
-Group(de):	Entwicklung/Sprachen/Java
-Group(pl):	Programowanie/Jêzyki/Java
 Source0:	http://jakarta.apache.org/builds/%{name}/release/%{version}/%{name}-%{version}.tar.gz
 URL:		http://jakarta.apache.org/regexp/index.html
 BuildArch:	noarch
@@ -24,8 +22,6 @@ Wyra¿enia regularne do Javy.
 Summary:	Java Regular Expression documentation
 Summary(pl):	Dokumentacja do javowych wyra¿eñ regularnych
 Group:		Development/Languages/Java
-Group(de):	Entwicklung/Sprachen/Java
-Group(pl):	Programowanie/Jêzyki/Java
 
 %description doc
 Java Regular Expression documentation.
