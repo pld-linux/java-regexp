@@ -1,11 +1,11 @@
---- jakarta-regexp-1.3/build.xml~	2003-09-02 20:56:46.000000000 +0200
-+++ jakarta-regexp-1.3/build.xml	2004-12-14 15:04:17.955572757 +0100
-@@ -36,7 +36,7 @@
+--- jakarta-regexp-1.4/build.xml.orig	2005-08-17 03:19:03.000000000 +0200
++++ jakarta-regexp-1.4/build.xml	2005-08-28 17:12:43.723619328 +0200
+@@ -54,7 +54,7 @@
      <property name="optimize" value="on"/>
      <property name="deprecation" value="off"/>
      <property name="RETest.txt" value="docs/RETest.txt"/>
--    <property name="jakarta-site2.dir" value="../jakarta-site2"/>
-+    <property name="jakarta-site2.dir" value="jakarta-site2"/>
+-    <property name="jakarta-site.dir" value="../jakarta-site/"/>
++    <property name="jakarta-site.dir" value="jakarta-site"/>
  
      <!-- Anakia -->
      <property name="docs.src" value="xdocs"/>
