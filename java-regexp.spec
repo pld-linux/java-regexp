@@ -9,7 +9,7 @@ Source0:	http://www.apache.org/dist/jakarta/regexp/source/%{name}-%{version}.tar
 # Source0-md5:	d903d84c949df848009f3bf205b32c97
 Patch0:		%{name}-build.patch
 URL:		http://jakarta.apache.org/regexp/index.html
-BuildRequires:	jakarta-ant
+BuildRequires:	ant
 Requires:	jre
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
