@@ -10,8 +10,11 @@ Source0:	http://www.apache.org/dist/jakarta/regexp/source/%{name}-%{version}.tar
 Patch0:		%{name}-build.patch
 URL:		http://jakarta.apache.org/regexp/index.html
 BuildRequires:	ant
+BuildRequires:	jpackage-utils
+BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jre
 BuildArch:	noarch
+ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,16 +33,16 @@ pytanie czêsto s³yszane w ¶wiecie Javy: "dlaczego nie ma przyzwoitego
 pakietu obs³uguj±cego wyra¿enia regularne w Javie na licencji typu
 BSD?".
 
-%package doc
-Summary:	Java Regular Expression documentation
-Summary(pl):	Dokumentacja do javowych wyra¿eñ regularnych
+%package javadoc
+Summary:	Java Regular Expression API documentation
+Summary(pl):	Dokumentacja API javowych wyra¿eñ regularnych
 Group:		Development/Languages/Java
 
-%description doc
-Java Regular Expression documentation.
+%description javadoc
+Java Regular Expression API documentation.
 
-%description doc -l pl
-Dokumentacja do javowych wyra¿eñ regularnych.
+%description javadoc -l pl
+Dokumentacja API javowych wyra¿eñ regularnych.
 
 %prep
 %setup -q
@@ -52,18 +55,21 @@ ant jar javadocs
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_javadir}
+install -d $RPM_BUILD_ROOT{%{_javadir},%{_javadocdir}/%{name}-%{version}}
+
 install build/%{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}
 ln -sf %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/regexp.jar
+
+cp -R docs/api/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE
+%doc LICENSE docs/*.html docs/*.txt
 %{_javadir}/*.jar
 
-%files doc
+%files javadoc
 %defattr(644,root,root,755)
-%doc xdocs docs
+%doc %{_javadocdir}/%{name}-%{version}
