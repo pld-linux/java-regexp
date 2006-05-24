@@ -51,6 +51,8 @@ Dokumentacja API javowych wyra¿eñ regularnych.
 find . -name "*.jar" -exec rm -f {} \;
 
 %build
+unset CLASSPATH || :
+export JAVA_HOME="%{java_home}"
 ant jar javadocs
 
 %install
