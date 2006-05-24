@@ -37,6 +37,7 @@ BSD?".
 Summary:	Java Regular Expression API documentation
 Summary(pl):	Dokumentacja API javowych wyra¿eñ regularnych
 Group:		Development/Languages/Java
+Obsoletes:	jakarta-regexp-doc
 
 %description javadoc
 Java Regular Expression API documentation.
