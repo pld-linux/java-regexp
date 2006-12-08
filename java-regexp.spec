@@ -2,7 +2,7 @@ Summary:	Java Regular Expression
 Summary(pl):	Wyra¿enia regularne do Javy
 Name:		jakarta-regexp
 Version:	1.4
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Development/Languages/Java
 Source0:	http://www.apache.org/dist/jakarta/regexp/source/%{name}-%{version}.tar.gz
@@ -37,6 +37,7 @@ BSD?".
 Summary:	Java Regular Expression API documentation
 Summary(pl):	Dokumentacja API javowych wyra¿eñ regularnych
 Group:		Development/Languages/Java
+Requires:	jpackage-utils
 Obsoletes:	jakarta-regexp-doc
 
 %description javadoc
@@ -53,7 +54,7 @@ find . -name "*.jar" -exec rm -f {} \;
 %build
 unset CLASSPATH || :
 export JAVA_HOME="%{java_home}"
-ant jar javadocs
+%ant jar javadocs
 
 %install
 rm -rf $RPM_BUILD_ROOT
