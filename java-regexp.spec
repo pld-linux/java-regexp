@@ -1,5 +1,5 @@
 Summary:	Java Regular Expression
-Summary(pl):	Wyraøenia regularne do Javy
+Summary(pl.UTF-8):   Wyra≈ºenia regularne do Javy
 Name:		jakarta-regexp
 Version:	1.4
 Release:	2
@@ -25,17 +25,17 @@ commonly hear in the Java world: "Why isn't there a decent regular
 expression package available for Java under a BSD-Style (ie: Apache)
 license?"
 
-%description -l pl
-Regexp to pakiet obs≥uguj±cy wyraøenia regularne napisany ca≥kowicie w
-czystej Javie. Zosta≥ on ≥askawie podarowany Apache Software
-Foundation przez Jonathana Locke. Ten pakiet ma byÊ odpowiedzi± na
-pytanie czÍsto s≥yszane w ∂wiecie Javy: "dlaczego nie ma przyzwoitego
-pakietu obs≥uguj±cego wyraøenia regularne w Javie na licencji typu
+%description -l pl.UTF-8
+Regexp to pakiet obs≈ÇugujƒÖcy wyra≈ºenia regularne napisany ca≈Çkowicie w
+czystej Javie. Zosta≈Ç on ≈Çaskawie podarowany Apache Software
+Foundation przez Jonathana Locke. Ten pakiet ma byƒá odpowiedziƒÖ na
+pytanie czƒôsto s≈Çyszane w ≈õwiecie Javy: "dlaczego nie ma przyzwoitego
+pakietu obs≈ÇugujƒÖcego wyra≈ºenia regularne w Javie na licencji typu
 BSD?".
 
 %package javadoc
 Summary:	Java Regular Expression API documentation
-Summary(pl):	Dokumentacja API javowych wyraøeÒ regularnych
+Summary(pl.UTF-8):   Dokumentacja API javowych wyra≈ºe≈Ñ regularnych
 Group:		Development/Languages/Java
 Requires:	jpackage-utils
 Obsoletes:	jakarta-regexp-doc
@@ -43,8 +43,8 @@ Obsoletes:	jakarta-regexp-doc
 %description javadoc
 Java Regular Expression API documentation.
 
-%description javadoc -l pl
-Dokumentacja API javowych wyraøeÒ regularnych.
+%description javadoc -l pl.UTF-8
+Dokumentacja API javowych wyra≈ºe≈Ñ regularnych.
 
 %prep
 %setup -q
