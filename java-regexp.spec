@@ -1,5 +1,5 @@
 Summary:	Java Regular Expression
-Summary(pl.UTF-8):   Wyrażenia regularne do Javy
+Summary(pl.UTF-8):	Wyrażenia regularne do Javy
 Name:		jakarta-regexp
 Version:	1.4
 Release:	2
@@ -35,7 +35,7 @@ BSD?".
 
 %package javadoc
 Summary:	Java Regular Expression API documentation
-Summary(pl.UTF-8):   Dokumentacja API javowych wyrażeń regularnych
+Summary(pl.UTF-8):	Dokumentacja API javowych wyrażeń regularnych
 Group:		Development/Languages/Java
 Requires:	jpackage-utils
 Obsoletes:	jakarta-regexp-doc
