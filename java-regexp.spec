@@ -1,20 +1,33 @@
+%bcond_without	javadoc		# don't build javadoc
+%if "%{pld_release}" == "ti"
+%bcond_without	java_sun	# build with gcj
+%else
+%bcond_with	java_sun	# build with java-sun
+%endif
+
+%include	/usr/lib/rpm/macros.java
+
+%define		srcname		regexp
 Summary:	Java Regular Expression
 Summary(pl.UTF-8):	Wyrażenia regularne do Javy
-Name:		jakarta-regexp
+Name:		java-regexp
 Version:	1.4
-Release:	2
+Release:	3
 License:	Apache v2.0
-Group:		Development/Languages/Java
-Source0:	http://www.apache.org/dist/jakarta/regexp/source/%{name}-%{version}.tar.gz
+Group:		Libraries/Java
+Source0:	http://www.apache.org/dist/jakarta/regexp/source/jakarta-regexp-%{version}.tar.gz
 # Source0-md5:	d903d84c949df848009f3bf205b32c97
-Patch0:		%{name}-build.patch
+Patch0:		jakarta-regexp-build.patch
 URL:		http://jakarta.apache.org/regexp/index.html
 BuildRequires:	ant
+%{!?with_java_sun:BuildRequires:	java-gcj-compat-devel}
+%{?with_java_sun:BuildRequires:	java-sun}
 BuildRequires:	jpackage-utils
+BuildRequires:	rpm >= 4.4.9-56
+BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jre
 BuildArch:	noarch
-ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,7 +49,7 @@ BSD?".
 %package javadoc
 Summary:	Java Regular Expression API documentation
 Summary(pl.UTF-8):	Dokumentacja API javowych wyrażeń regularnych
-Group:		Development/Languages/Java
+Group:		Documentation
 Requires:	jpackage-utils
 Obsoletes:	jakarta-regexp-doc
 
@@ -47,33 +60,44 @@ Java Regular Expression API documentation.
 Dokumentacja API javowych wyrażeń regularnych.
 
 %prep
-%setup -q
+%setup -q -n jakarta-regexp-%{version}
 %patch0 -p1
-find . -name "*.jar" -exec rm -f {} \;
+find -name "*.jar" -exec rm -f {} \;
 
 %build
 unset CLASSPATH || :
 export JAVA_HOME="%{java_home}"
-%ant jar javadocs
+%ant jar %{?with_javadoc:javadocs}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_javadir},%{_javadocdir}/%{name}-%{version}}
+install -d $RPM_BUILD_ROOT%{_javadir}
 
-install build/%{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}
-ln -sf %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/regexp.jar
+install build/jakarta-regexp-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{srcname}-%{version}.jar
+ln -sf %{srcname}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{srcname}.jar
 
-cp -R docs/api/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
+# javadoc
+%if %{with javadoc}
+install -d $RPM_BUILD_ROOT%{_javadocdir}/%{srcname}-%{version}
+cp -R docs/api/* $RPM_BUILD_ROOT%{_javadocdir}/%{srcname}-%{version}
+ln -s %{srcname}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{srcname} # ghost symlink
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post javadoc
+ln -nfs %{srcname}-%{version} %{_javadocdir}/%{srcname}
 
 %files
 %defattr(644,root,root,755)
 %doc LICENSE docs/*.html docs/*.txt
 %{_javadir}/*.jar
 
+%if %{with javadoc}
 %files javadoc
 %defattr(644,root,root,755)
-%doc %{_javadocdir}/%{name}-%{version}
+%{_javadocdir}/%{srcname}-%{version}
+%ghost %{_javadocdir}/%{srcname}
+%endif
