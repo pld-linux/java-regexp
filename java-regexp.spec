@@ -27,6 +27,8 @@ BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jre
+Provides:	jakarta-regexp
+Obsoletes:	jakarta-regexp
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,6 +54,7 @@ Summary(pl.UTF-8):	Dokumentacja API javowych wyrażeń regularnych
 Group:		Documentation
 Requires:	jpackage-utils
 Obsoletes:	jakarta-regexp-doc
+Obsoletes:	jakarta-regexp-javadoc
 
 %description javadoc
 Java Regular Expression API documentation.
