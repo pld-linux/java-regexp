@@ -1,15 +1,14 @@
 #
 # Conditional build:
 %bcond_without	javadoc		# don't build javadoc
-#
-%include	/usr/lib/rpm/macros.java
 
 %define		srcname		regexp
+%include	/usr/lib/rpm/macros.java
 Summary:	Java Regular Expression
 Summary(pl.UTF-8):	Wyrażenia regularne do Javy
 Name:		java-regexp
 Version:	1.5
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Libraries/Java
 Source0:	http://www.apache.org/dist/jakarta/regexp/source/jakarta-regexp-%{version}.tar.gz
@@ -22,7 +21,6 @@ BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jre
-Provides:	jakarta-regexp
 Obsoletes:	jakarta-regexp
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
