@@ -3,7 +3,6 @@
 %bcond_without	javadoc		# don't build javadoc
 
 %define		srcname		regexp
-%include	/usr/lib/rpm/macros.java
 Summary:	Java Regular Expression
 Summary(pl.UTF-8):	Wyrażenia regularne do Javy
 Name:		java-regexp
