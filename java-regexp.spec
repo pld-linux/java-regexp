@@ -56,7 +56,7 @@ Dokumentacja API javowych wyrażeń regularnych.
 
 %prep
 %setup -q -n jakarta-regexp-%{version}
-%patch0 -p1
+%patch -P0 -p1
 find -name "*.jar" -exec rm -f {} \;
 
 %build
