@@ -7,7 +7,7 @@ Summary:	Java Regular Expression
 Summary(pl.UTF-8):	Wyrażenia regularne do Javy
 Name:		java-regexp
 Version:	1.5
-Release:	2
+Release:	3
 License:	Apache v2.0
 Group:		Libraries/Java
 Source0:	http://www.apache.org/dist/jakarta/regexp/source/jakarta-regexp-%{version}.tar.gz
