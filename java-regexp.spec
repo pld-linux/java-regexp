@@ -2,12 +2,14 @@
 # Conditional build:
 %bcond_without	javadoc		# don't build javadoc
 
+%{?use_default_jdk:%use_default_jdk 8}
+
 %define		srcname		regexp
 Summary:	Java Regular Expression
 Summary(pl.UTF-8):	Wyrażenia regularne do Javy
 Name:		java-regexp
 Version:	1.5
-Release:	3
+Release:	4
 License:	Apache v2.0
 Group:		Libraries/Java
 Source0:	http://www.apache.org/dist/jakarta/regexp/source/jakarta-regexp-%{version}.tar.gz
@@ -15,10 +17,10 @@ Source0:	http://www.apache.org/dist/jakarta/regexp/source/jakarta-regexp-%{versi
 Patch0:		jakarta-regexp-build.patch
 URL:		http://jakarta.apache.org/regexp/index.html
 BuildRequires:	ant
-BuildRequires:	jdk
+%buildrequires_jdk
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
-BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	rpmbuild(macros) >= 2.021
 Requires:	jre
 Obsoletes:	jakarta-regexp
 BuildArch:	noarch
